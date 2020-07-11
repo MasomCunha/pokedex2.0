@@ -1,35 +1,63 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import ApiToDetail from '../api/ApiToDetail.jsx'
-
+import SingleCard from '../components/SingleCard.jsx'
+import Stats from '../components/Stats.jsx'
+import EvolutionChain from '../components/EvolutionChain.jsx'
 class SinglePokemon extends Component {
 
     state = {
-        pokemon : this.props.match.params.pokemon,
-        detailInfo : null
+        pokemon: this.props.match.params.pokemon,
+        detailInfo: null,
+        flavorInfo: ''
+
     }
 
-    getDetailIfo = (data) => {
+    getDetailInfo = (data) => {
         this.setState({
-            detailInfo:data
+            detailInfo: data
         })
     }
 
-    render(){
-    return(
-        <Container>
-            <Row>
-                <Col>
-                <h1>{this.props.match.params.pokemon}</h1>
-                <ApiToDetail pokemon = {this.state.pokemon} 
-                             getDetailIfo = {this.getDetailIfo}
+    getFlavorInfo = (data) => {
+        this.setState({
+            flavorInfo: data
+        })
+    }
+
+    render() {
+        return (
+            <Container>
+                <ApiToDetail pokemon={this.state.pokemon}
+                    getDetailInfo={this.getDetailInfo}
+                    getFlavorInfo={this.getFlavorInfo}
                 />
-                {this.state.detailInfo ? <h1>{ this.state.detailInfo.height}</h1> : console.log("no type")}
-                </Col>
-            </Row>
-        </Container>
-        
-    )
+                <Row>
+                    <Col>
+                        <h1>{this.props.match.params.pokemon}</h1>
+                    </Col>
+                </Row>
+
+                {this.state.detailInfo ? 
+                    <Row md = "2">
+                    <Col>
+                        <SingleCard mainData = {this.state.detailInfo}
+                                    description = {this.state.flavorInfo}
+                        /> 
+                    </Col>
+                    <Col>
+                      <Stats mainData = {this.state.detailInfo}/> 
+                    </Col>
+                    <Col>
+                      <EvolutionChain mainData = {this.state.detailInfo}/>
+                    </Col>
+                </Row>
+                : <h1>no information</h1>
+                }
+                
+            </Container>
+
+        )
     }
 }
 

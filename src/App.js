@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path='/' exact={true} component={Pokedex} />
-          <Route path="/pokemon/:pokemon" component={SinglePokemon} />
+          <Route path='/' exact={true} component={ Pokedex } />
+          <Route path="/pokemon/:pokemon" component={ SinglePokemon } />
         </Switch>
       </BrowserRouter>
     </div>
