@@ -9,11 +9,14 @@ import pokedexBackground from './img/pokebackground.jpg'
 
 function App() {
   return (
-    <div className="App" style={{ backgroundImage: `url(${pokedexBackground})`, height: "100%"}}>
+    <div className="App" style={{ backgroundImage: `url(${pokedexBackground})`, height: "100%" }}>
       <BrowserRouter>
         <Switch>
-          <Route path='/' exact={true} component={ Pokedex } />
-          <Route path="/pokemon/:pokemon" component={ SinglePokemon } />
+          <Route exact path="/">
+            <Redirect to="/Pokedex2.0" />
+          </Route>
+          <Route path='/Pokedex2.0' exact={true} component={Pokedex} />
+          <Route path="/pokemon/:pokemon" component={SinglePokemon} />
         </Switch>
       </BrowserRouter>
     </div>

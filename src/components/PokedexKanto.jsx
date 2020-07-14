@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PokeCard from './PokeCard.jsx'
-import { Container, Row, Col } from 'reactstrap';
+import { Col } from 'reactstrap';
 
 const PokedexKanto = ({ pokemons }) => {
 

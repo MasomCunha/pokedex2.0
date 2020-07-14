@@ -11,7 +11,7 @@ class ApiToDetail extends Component{
 
         axios.get('https://pokeapi.co/api/v2/pokemon/' + `${this.props.pokemon}`)
       .then(res => {
-       console.log(res.data)
+       //console.log(res.data)
         this.setState({
             pokeDetail : res.data
         })

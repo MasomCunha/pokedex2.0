@@ -21,7 +21,6 @@ class PokedexHome extends Component {
     render() {
         return (
             <Container >
-            {/*style = {{ backgroundImage: `url(${pokedexBackground})`, backgroundRepeat: 'no-repeat', height: "100%"}}*/}
                 <Row>
                     <Col>
                         <br/>
