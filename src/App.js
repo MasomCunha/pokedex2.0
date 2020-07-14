@@ -3,10 +3,13 @@ import './App.css'
 import Pokedex from './pages/PokedexHome.jsx'
 import SinglePokemon from './pages/SinglePokemon.jsx'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import pokedexBackground from './img/pokebackground.jpg'
+
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${pokedexBackground})`, height: "100%"}}>
       <BrowserRouter>
         <Switch>
           <Route path='/' exact={true} component={ Pokedex } />

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ApiData from '../api/PokemonApi.jsx'
 import Pokedex from '../components/PokedexKanto.jsx'
 import { Container, Row, Col } from 'reactstrap'
+import pokedexBackground from '../img/backgroundpokemon.png'
+
 
 
 class PokedexHome extends Component {
@@ -18,15 +20,19 @@ class PokedexHome extends Component {
 
     render() {
         return (
-            <Container>
+            <Container >
+            {/*style = {{ backgroundImage: `url(${pokedexBackground})`, backgroundRepeat: 'no-repeat', height: "100%"}}*/}
                 <Row>
                     <Col>
-                        <h1>PoKedex 2.0</h1>
+                        <br/>
+                        <br/>
+                        <h1 style = {{ fontFamily: 'Passion One, cursive', color: "#FDF300", fontSize: "400%" }}>Pokédex</h1>
+                        <h2 style = {{ color: "#0948B2", fontSize: "200%" }}>Kanto Region</h2>
                         <ApiData addPokemons={this.addPokemons} />
                     </Col>
                 </Row>
                 <br/>
-                <Row>
+                <Row style={{ backgroundImage: `url(${pokedexBackground})`, overflowX : 'auto', height:'33vw'}}>
                     <Pokedex pokemons={this.state.pokemons} />
                 </Row>
             </Container>

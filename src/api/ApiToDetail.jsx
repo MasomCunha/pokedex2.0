@@ -11,7 +11,7 @@ class ApiToDetail extends Component{
 
         axios.get('https://pokeapi.co/api/v2/pokemon/' + `${this.props.pokemon}`)
       .then(res => {
-       // console.log(res.data)
+       console.log(res.data)
         this.setState({
             pokeDetail : res.data
         })
@@ -20,7 +20,7 @@ class ApiToDetail extends Component{
 
       axios.get('https://pokeapi.co/api/v2/pokemon-species/' + `${this.props.pokemon}`)
       .then(res => {
-         // console.log(res.data.flavor_text_entries)
+         console.log(res.data.flavor_text_entries)
           this.props.getFlavorInfo(res.data.flavor_text_entries[1].flavor_text)
       })
 

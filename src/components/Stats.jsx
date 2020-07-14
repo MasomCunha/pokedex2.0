@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar} from 'recharts';
 
 
 class Stats extends PureComponent {
@@ -28,21 +28,16 @@ class Stats extends PureComponent {
 
     render() {
         return (
-            <div>
+            <div style={{ fontFamily: 'Lora, serif' }}>
                 <h1>Base Stats</h1>
-                <BarChart
-                    width={700}
-                    height={300}
-                    data={this.data}
-                    margin={{
-                        top: 20, right: 30, left: 20, bottom: 5,
-                    }}
-                >
-                    <XAxis dataKey="name" />
-                    <YAxis domain = {[0, 200]} />
+
+                <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={this.data}>
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="name" />
+                    <PolarRadiusAxis angle={30} domain={[0, 200]} />
+                    <Radar name="Pokemon" dataKey="pv" stroke="#1E3B9C" fill="#1E3B9C" fillOpacity={0.6} />
                     <Tooltip />
-                    <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-                </BarChart>
+                </RadarChart>
             </div>
         );
     }

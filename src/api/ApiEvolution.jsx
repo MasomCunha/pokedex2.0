@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import ApiData from './PokemonApi'
 import axios from 'axios'
 
+
+
 class ApiEvolution extends Component {
 
+    
     state = {
         name : this.props.name
     }
@@ -14,6 +17,8 @@ class ApiEvolution extends Component {
            console.log(res.data);   
           });
     }
+
+
 
     render(){
         return (

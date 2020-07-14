@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 import ApiToDetail from '../api/ApiToDetail.jsx'
 import SingleCard from '../components/SingleCard.jsx'
 import Stats from '../components/Stats.jsx'
-import EvolutionChain from '../components/EvolutionChain.jsx'
+{/*import EvolutionChain from '../components/EvolutionChain.jsx'*/}
 class SinglePokemon extends Component {
 
     state = {
@@ -34,7 +34,9 @@ class SinglePokemon extends Component {
                 />
                 <Row>
                     <Col>
-                        <h1>{this.props.match.params.pokemon}</h1>
+                        <br/>
+                        <br/>
+                        <h1 style = {{ fontFamily: 'Passion One, cursive', color: "#FDF300", fontSize: "400%" }}>{this.props.match.params.pokemon}</h1>
                     </Col>
                 </Row>
 
@@ -49,7 +51,7 @@ class SinglePokemon extends Component {
                       <Stats mainData = {this.state.detailInfo}/> 
                     </Col>
                     <Col>
-                      <EvolutionChain mainData = {this.state.detailInfo}/>
+                      {/*<EvolutionChain mainData = {this.state.detailInfo}/>*/}
                     </Col>
                 </Row>
                 : <h1>no information</h1>
