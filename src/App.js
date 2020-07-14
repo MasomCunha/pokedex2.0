@@ -13,9 +13,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Redirect to="/Pokedex2.0" />
+            <Redirect to="/pokedex2.0" />
           </Route>
-          <Route path='/Pokedex2.0' exact={true} component={Pokedex} />
+          <Route path='/pokedex2.0' exact={true} component={Pokedex} />
           <Route path="/pokemon/:pokemon" component={SinglePokemon} />
         </Switch>
       </BrowserRouter>
